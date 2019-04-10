@@ -22,7 +22,6 @@
     <link rel="stylesheet" href="css/jquery-ui.min.css">
     <link rel="stylesheet" href="css/style.css">
 
-
 <script type="text/javascript" language="javascript" src="js/jquery.js"></script>
 <script src="js/jquery-ui.min.js"></script>
 <!-- Highcharts--> 
