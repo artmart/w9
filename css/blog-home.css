@@ -1,0 +1,1593 @@
+body {
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+footer {
+    margin: 50px 0;
+}
+
+
+
+
+/* CSS Document */
+/* Styles.css */
+/* Copyright (c) 2005, 2006 PeteSoft, LLC. All Rights Reserved */
+
+body, th, td 
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	margin: 0px;
+}
+
+hr 
+{
+	border: solid 1px #97A9BD;
+}
+
+/* Links */
+a 
+{
+	color: #000066;
+	text-decoration: none;
+}
+
+a:active 
+{
+}
+
+a:hover 
+{
+	color: #CC0000;
+	text-decoration: underline;
+}
+
+a:link 
+{
+}
+
+a:visited 
+{
+}
+
+h1
+{
+	font-size: 20pt;
+	color: #000066;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.h4Title
+{
+	font-size: 14pt;
+	font-weight: bold;
+	color: #000066;
+}
+
+h3
+{
+	font-size: 12pt;
+	color: #000066;
+	font-weight: bold;
+	margin-bottom: 0px;
+}
+
+h4
+{
+	font-size: 12pt;
+}
+
+h5
+{
+	font-size: 10pt;
+}
+
+.FeatureMain, .FeatureSub, .FeatureSub1 
+{
+	font-size: 20pt;
+	color: #000066;
+	font-weight: bold;
+	padding-bottom: 10px;
+}
+
+.FeatureSub 
+{
+	font-size: 15pt;
+	padding-bottom: 0px;
+}
+
+.FeatureSub1 
+{
+	font-size: 10pt;
+	padding-bottom: 0px;
+}
+
+.FeatureSub1a
+{
+	font-size: 12pt;
+}
+
+.TextLink 
+{
+	text-decoration: underline;
+}
+
+.Links td
+{
+	text-align: center;
+	padding-bottom: 5px;
+}
+
+.Links img
+{
+	vertical-align: middle;
+}
+
+/* Navigation Menus */
+.Nav 
+{
+	margin-left: 5px;
+	font-size: 10pt;
+	color: #FFFFFF;
+}
+
+.Nav a 
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+.Nav a:active 
+{
+}
+
+.Nav a:hover 
+{
+	color: #FFFF00;
+	text-decoration: underline;
+}
+
+.Nav a:link 
+{
+}
+
+.Nav a:visited 
+{
+}
+
+.NavMain
+{
+	font-weight: bold;
+	font-size: 12pt;
+	margin-top: 20px;
+	color: #000066;
+}
+
+.NavSub
+{
+	margin-left: 15px;
+	font-size: 12pt;
+	font-weight: normal;
+	margin-top: 5px;
+	color: #000066; 
+}
+
+.NavSub1
+{
+	margin-left: 30px;
+	font-size: 11pt;
+	font-weight: normal;
+	margin-top: 5px;
+	color: #000066;
+}
+
+.NavSub2
+{
+	margin-left: 45px;
+	font-size: 10pt;
+	font-weight: normal;
+	margin-top: 5px;
+	color: #000066;
+}
+
+.FeaturedCalc
+{
+	font-weight: bold;
+	font-size: 12pt;
+	color: #000066;
+	margin-top: 7px;
+}
+
+td.CalcGroup
+{
+	padding-left: 5px;
+}
+
+.CalcGroup, .CalcGroup h1, .CalcGroup h2
+{
+	font-size: 12pt; 
+	font-weight: bold; 
+}
+
+.CalcGroup h1
+{
+	font-size: 14pt;
+}
+
+.CalcGroup h1, .CalcGroup h2
+{
+	display: inline;
+	margin-bottom: 0px;
+	vertical-align: bottom;
+}
+
+.CalcGroupOdd
+{
+	background-color: #F1ECD8; /*#E9E0BE;*/
+}
+
+tbody.CalcGroupOdd
+{
+	padding-left: 0px;
+}
+
+.CalcGroupEven
+{
+	background-color: #E1E6FD; /*#BFC8FB;*/
+}
+
+tbody.CalcGroupEven
+{
+	padding-left: 0px;
+}
+
+td.CalcCategory
+{
+	color: #666666;
+	font-size: 12pt; 
+	font-style: italic;
+	padding-left: 8px;
+	padding-top: 8px;
+}
+
+.CalcName 
+{
+	font-size: 12pt; 
+}
+
+.GroupPageContent
+{
+	padding-top: 10px; 
+	padding-left: 15px; 
+	padding-right: 10px;
+}
+
+.GroupPageMain
+{
+	margin-top: 10px;
+	margin-bottom: 15px;
+	margin-left: 15px;
+	margin-right: 15px;
+	text-align: left;
+}
+
+.GroupPage
+{
+	width: 590px;
+}
+
+.Vote
+{
+	font-size: 7pt;
+	height: 20px;
+}
+
+/* FAQ */
+.FAQ, .FAQLight
+{
+	font-size: 12pt;
+	font-weight: bold;
+	margin-top: 5px;
+	color: #000066; 
+}
+
+.FAQLight
+{
+	color: #788cab;
+}
+
+.FAQ li
+{
+	margin-top: 5px;
+}
+
+.Q, .HighLight, a:hover.HighLight, a:hover.HighLightOn
+{
+	font-weight: bold;
+	color: #000066;
+	padding-top: 10px;
+}
+
+.A 
+{
+	font-weight: normal;
+	padding-top: 5px;
+}
+
+.A p 
+{
+	margin-top: -10px;
+}
+
+.HighLightOn
+{
+	background-color: yellow;
+}
+
+a:hover.HighLight, a:hover.HighLightOn
+{
+	text-decoration: none;
+	padding-top: 0px;
+}
+
+.Input
+{
+}
+
+.Input td, .Input input
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+}
+
+.InputBorder
+{
+	border: thin solid black;
+	background-color: white;
+}
+
+.InputGroupTitle
+{
+	width: 95%;
+	font-weight: bold;
+	font-size: 10pt;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #000000;
+	padding-top: 15px;
+	text-align: left;
+}
+
+.InputGroupEdit
+{
+	padding-top: 15px;
+	font-size: 8pt;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #000000;
+	text-align: right;
+}
+
+.InputTitle
+{
+	font-weight: bold;
+	text-align: right;
+	padding: 1px;
+	vertical-align: top;
+}
+
+.InputColSpace
+{
+	width: 10px;
+}
+	
+.Required
+{
+	color: red;
+	text-align: right;
+	vertical-align: super;
+	width: 7px;
+}
+
+.ErrMsg
+{
+	color: #FF0000;
+}
+
+table.CalcHdr
+{
+	background-color: #30547C;
+	background-repeat: no-repeat; 
+	background-position: right top;
+}
+
+table.CalcHdr td
+{
+	font-size: 16pt;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+
+.CalcHdrImg
+{
+	margin: 15px;
+	text-align: center;
+}
+
+table.Calc
+{
+	font-size: 10pt;
+	background-color: #E7EBEF;
+}
+
+.Calc td, .Calc input
+{
+	font-size: 10pt;
+}
+
+.Calc input
+{
+	text-align: right;
+}
+
+.Calc hr
+{
+	border-left: none;
+	border-right: none;
+	border-top: #97a9bd 1px solid;
+	border-bottom: none;
+	height: 1px;
+}
+
+.CalcTop
+{
+	width: 1px; height: 4px;
+}
+
+.CalcSide
+{
+	width: 8px; height: 8px;
+}
+
+.TitleSpace
+{
+	width: 1px; height: 5px;
+}
+ 
+.UnitsSpace
+{
+	width: 1px; height: 2px;
+}
+
+input.TitleInput
+{
+	text-align: center;
+	font-weight: bold;
+}
+
+input.TextInput
+{
+	text-align: left;
+}
+
+input.Lender
+{
+	text-align: left;
+}
+
+input.TextInputCenter
+{
+	text-align: center;
+}
+
+td.CopyrightCalc, .CopyrightCalc a
+{
+	font-size: 7pt;
+	color:  #CC3333;
+}
+
+td.Copyright
+{
+	padding-top: 3px;
+}
+	
+td.Copyright, .Copyright a
+{
+	font-size: 7pt;
+	color:  black;
+}
+
+td.Disclaimer
+{
+	font-size: 7pt;
+}
+.CompanyName
+{
+	font-size: 12pt;
+	margin: 5px;
+}
+
+.SmallPrint
+{
+	font-size: 10px;
+}
+
+a:link
+{
+}
+
+a:visited
+{
+}
+
+.Header, .Side 
+{
+	background-color: #D7DEF9; /* #E7E7FF; */
+}
+ 
+.Header
+{
+	border-bottom: solid 1px #6B839C;
+}
+
+.Side
+{
+	border-right: solid 1px #6B839C;
+	background-image: url(Images/MenuBackgroundRef.jpg);
+	background-repeat: repeat-y; 
+}
+
+.SideMenu, .SideMenu a, .TopMenu, .TopMenu a
+{
+	font-weight: bold;
+	color: #6B839C;
+}
+
+.TopMenu td
+{
+	padding: 3px;
+}
+
+.SideMenu a
+{
+	padding-left: 3px;
+	padding-right: 3px;
+}
+
+.SideMenu a:hover, .TopMenu a:hover
+{
+	text-decoration: none; 
+	color: #E7EBEF; 
+	background-color: #000066;
+}
+
+td.SideMenuBold a
+{
+	color: #000066; 
+	font-size: 110%;
+}
+
+.SideMenuLinks td
+{
+	text-align: left;
+}
+
+.Title
+{
+	font-size: 14pt;
+	font-weight: bold; 
+	color: #000066;
+}
+
+.AcctInfo
+{
+	color: #6B839C;
+	text-align: right;
+	padding-left: 5px;
+}
+
+.MenuBtn, .MenuBtnBuy
+{
+	background-color: #30547C;
+}
+
+.MenuBtn, .MenuBtnOver, .MenuBtnBuy, .MenuBtnBuyOver
+{
+	border: 1px solid #30547C;
+}
+
+.MenuBtn img, .MenuBtnOver img, .MenuBtnBuy img, .MenuBtnBuyOver img
+{
+	vertical-align: middle;
+}
+
+.MenuBtnOver, .MenuBtnBuyOver
+{
+	background-color: #E7EBEF;
+}
+
+.MenuBtn, .MenuBtn a
+{
+	color: #E7EBEF; 
+}
+
+.MenuBtnOver a, .MenuBtnOver a:hover
+{
+	color: #30547C;
+}
+
+.MenuBtnBuy, .MenuBtnBuy a
+{
+	color: Yellow;
+}
+
+.MenuBtnBuyOver a, .MenuBtnBuyOver a:hover
+{
+	color: Red;
+}
+
+.MenuBtn, .MenuBtnOver, .MenuBtnBuy, .MenuBtnBuyOver
+{
+	font-size: 12px;
+	width: 90px;
+	text-decoration: none;
+}
+
+.MenuBtn a, .MenuBtnOver a, .MenuBtnOver a:hover, .MenuBtnBuy a, .MenuBtnBuyOver a, .MenuBtnBuyOver a:hover
+{
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.ShopCartBox
+{
+	border: 1px solid #30547C;
+	font-size: 12px;
+}
+
+.Submit
+{
+	font-size: 9pt; 
+	height: 20px;
+}
+
+.HelpWin
+{
+	margin: 20px;
+}
+
+.HelpWin h2
+{
+	font-weight: bold;
+	text-align: center;
+	vertical-align: top;
+	white-space: nowrap;
+	font-size: 25px;
+	margin-bottom: 20px;
+}
+
+.HelpWin h3
+{
+	font-weight: bold;
+	text-align: left;
+	vertical-align: top;
+	white-space: nowrap;
+	font-size: 18px;
+	margin-top: 15px;
+	margin-bottom: 5px;
+}
+
+.HelpWin h4
+{
+	font-weight: bold;
+	text-align: left;
+	vertical-align: top;
+	white-space: nowrap;
+	font-size: 16px;
+	text-decoration: underline;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.HelpField
+{
+	font-weight: bold;
+	text-align: right;
+	vertical-align: top;
+	white-space: nowrap;
+/*	width: 175px; */
+}
+
+.HelpField img
+{
+	vertical-align: top;
+}
+
+.HelpText
+{
+	vertical-align: top;
+}
+
+.HelpBox
+{
+	visibility: hidden;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	color: #000000;
+	border: 1px solid #000000;
+	background-color: #FFFBD9;
+	padding: 2px;
+	font-size: 9pt;
+}
+
+.InfoWin
+{
+	margin: 20px;
+}
+
+.InfoWin h2
+{
+	font-weight: bold;
+	text-align: center;
+	vertical-align: top;
+	white-space: nowrap;
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+
+.InfoWin h4
+{
+	text-decoration: underline;
+	font-weight: bold;
+	font-size: 17px;
+	margin-bottom: 5px;
+}
+
+.InfoWin hr
+{
+	color: #000000;
+	height: 1px;
+}
+
+.InfoField
+{
+	font-weight: bold;
+	text-align: right;
+	vertical-align: text-top;
+	white-space: nowrap;
+}
+
+.InfoText
+{
+	vertical-align: top;
+	padding-bottom: 5px;
+}
+
+/*
+	Dark  #E7EBEF
+	Light #30547C
+*/
+
+.PopupMenu, .PopupMenuX, .PopupMenuItemOver, .PopupMenuItemNotEnabledOver
+{
+	background-color: #30547C;
+	border: 1px solid #000000;
+}
+
+.PopupMenuItem, .PopupMenuItemNotEnabled
+{
+	background-color: #E7EBEF;
+	border: 1px solid #000000;
+}
+
+.PopupMenu
+{
+	visibility: hidden;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+.PopupMenu td
+{
+	font-size: 8pt;
+}
+
+.PopupMenuX
+{
+	padding: 0px;
+	text-align: right;
+}
+
+.PopupMenuItem
+{
+	color: #000000;
+	padding: 2px;
+}
+
+.PopupMenuItemOver
+{
+	font-size: 8pt;
+	color: #FFFFFF;
+	padding: 2px;
+	cursor: default;
+}
+
+.PopupMenuItemNotEnabled, .PopupMenuItemNotEnabledOver
+{
+	font-size: 8pt;
+	color: #999999;
+	padding: 2px;
+}
+
+.CalcIcon
+{
+	cursor: pointer;
+}
+
+.HelpIcon
+{
+	cursor: help;
+}
+
+.NewBtn
+{
+	vertical-align: text-bottom;
+}
+
+.DisplayOn, .DisplayOnIcon
+{
+/*	display: inherit;  doesn't work in FireFox the same way a empty value does */
+	display: ;
+}
+
+.DisplayOff, .DisplayOffIcon
+{
+	display: none;
+}
+
+.DisplayOnIcon, .DisplayOffIcon
+{
+	cursor: pointer;
+}
+
+.Timeout
+{
+	cursor: wait;
+}
+
+.Line
+{
+	background-color: #97A9BD;
+}
+
+.ItemPrice
+{
+	font-size: 10pt;
+}
+
+.Statement 
+{
+}
+
+.Statement hr
+{
+	color: #000000;
+	height: 1px;
+}
+
+td.HtmlExample, .HtmlExample 
+{
+	background-color: #D7DEF9;
+	padding: 10px;
+}
+
+td.HtmlExample1, .HtmlExample1 
+{
+	border: solid 1px #97A9BD;
+	background-color: #D7DEF9;
+	padding: 5px;
+}
+
+.Examples dd
+{
+	margin-top: 5px;
+}
+
+.Catalog th
+{
+	text-align: left;
+	vertical-align: bottom;
+}
+.Catalog td
+{
+	vertical-align: bottom;
+}
+
+.Expired, .Upgrade
+{
+	color: Red;
+	font-weight: bold;
+}
+
+.AutoRenew, .GroupName
+{
+	color: blue;
+	font-weight: bold;
+}
+
+table.Values
+{
+/*	border-top: solid 1px #97A9BD; 
+	border-left: solid 1px #97A9BD; */
+	border-bottom: solid 1px #D7DEF9; 
+	border-right: solid 1px #D7DEF9; 
+}
+
+.Values td
+{
+	border-top: solid 1px #D7DEF9; 
+	border-left: solid 1px #D7DEF9;
+/*	border-bottom: solid 1px #97A9BD; 
+	border-right: solid 1px #97A9BD; */ 
+}
+
+.MaintMainTitle 
+{
+	font-size: 12pt;
+	font-weight: bold;
+	text-align: left;
+	white-space: nowrap
+}
+
+.MaintTitle, .MaintTitleLeft 
+{
+	font-weight: bold;
+	text-align: right;
+/*	padding: 1px;
+	vertical-align: bottom; */	
+	white-space: nowrap
+}
+
+.MaintTitleLeft
+{
+	text-align: left;
+}
+
+.MaintSelect
+{
+	height: 350px;
+	width: 225px;
+}
+
+.MaintSelectWide
+{
+	height: 350px;
+	width: 275px;
+}
+
+.MaintRno
+{
+	width: 50px;
+}
+
+.MaintNameShort
+{
+	width: 257px;
+}
+
+.MaintName, .MaintNotes
+{
+	width: 310px;
+}
+
+.MaintNotes
+{
+	height: 50px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+}
+
+.MaintShort
+{
+	width: 100px;
+}
+
+.MaintCC
+{
+	width: 140px;
+}
+
+.MaintUser
+{
+	width: 80px;
+}
+
+.MaintDate
+{
+	width: 80px;
+}
+
+.MaintDateTime
+{
+	width: 140px;
+}
+
+.MaintLine
+{
+	height: 1px;
+	color: Black;
+}
+
+.GroupMember
+{
+	color: #444444; 
+	font-size: 9pt;
+}
+
+.AuthGroup
+{
+	font-style: normal;
+	font-weight: bold;
+	font-size: 11pt;
+	color: blue;
+	padding-top: 10px;
+}
+
+.Smaller
+{
+	font-size: 8pt;
+}
+
+.PostNotes 
+{
+	height: 100px;
+	width: 400px;
+}
+
+.TotalLine
+{
+	border-top: solid 1px black;
+}
+
+.FeatureButton
+{
+	border: solid 6px #30547C;
+	background-color: #30547C;
+	padding: 5px;
+	cursor: hand;
+}
+
+.FeatureButton td
+{
+	color: #ffffff;
+	text-align: center;
+	font-size: 12pt;
+	font-weight: bold;
+}
+
+td.FeatureTitle
+{
+	color: Yellow;
+	text-align: left;
+	font-size: 14pt;
+	font-weight: bold;
+}
+
+.CalcQuest
+{
+	color: #000066;
+	font-size: 11pt;
+	font-style: italic;
+	font-weight: bold;
+	padding-top: 5px;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.WhyUse
+{
+	font-size: 13pt;
+	font-weight: Bold;
+	text-align: center;
+	background-color: #FFFFFF;
+	color: #000000;
+}
+
+.Scroll
+{
+	width: 650px; 
+	height: 130px;
+	font-size: 13pt;
+	font-weight: Bold;
+	text-align: center;
+	background-color: #FFFFFF;
+	color: #000000;
+	filter: progid:DXImageTransform.Microsoft.Fade(duration=1.0,overlap=1.0); 
+}
+
+.ScrollTitle
+{
+	font-size: 16pt;
+/*	font-weight: bold; */
+/*	text-align: center; */
+	margin-bottom: 3px;
+}
+
+.BtmLinks td
+{
+	font-size: 8pt;
+	border-top: solid 2px #97A9BD; 
+	border-bottom: solid 2px #97A9BD; 
+	padding-top: 3px; 
+	padding-bottom: 3px; 
+}
+
+.SEO
+{
+}
+
+.SEO b
+{
+	font-weight: normal;
+}
+
+.BigText
+{
+	font-size: 125%;
+}
+
+.Test
+{
+	border: 1px solid #88AAD0; /* #30547C; */
+	background-image: url(Images/BtnBck.gif);
+	background-color: #E7EBEF;
+}
+
+.TestOver
+{
+	border: 1px solid #88AAD0; /* #30547C; */
+	background-color: #E7EBEF;
+}
+
+
+.Test, .Test a
+{
+	color: #30547C; 
+}
+
+.TestOver a, .TestOver a:hover
+{
+	color: #30547C;
+	text-decoration: none;
+}
+
+body.BizCalcs
+{
+	padding: 0px;
+	background-image: url('Images/BlackDots-No-Fade.gif'); 
+	background-repeat: repeat; 
+	background-position: top left; 
+	background-attachment: fixed; 
+}
+
+.BizCalcs .Background
+{
+	max-width: 1100px; 
+	margin: 0px auto; 
+	background-color: white;
+	position: relative;
+}
+
+.BizCalcs div.Logo
+{
+    margin: 10px 15px;
+    display: inline-block;
+}
+
+.BizCalcs img.Logo
+{
+    width: 125px;
+}
+
+.BizCalcs .GroupTitle
+{
+    display: inline-block;
+    margin-left: 160px;
+    vertical-align: top;
+    margin-top: 30px;
+}
+
+.BizCalcs .GroupDesc
+{
+    text-align: left;
+}
+
+.BizCalcs .HomeDesc
+{
+    padding: 15px;
+}
+
+.BizCalcs .HomeDesc h1
+{
+    font-size: 20pt;
+}
+
+.BizCalcs .HomeDesc h4 a
+{
+    color: rgb(83, 111, 153);
+}
+
+.BizCalcs .HomeDesc h4 a:hover
+{
+    text-decoration: none;
+    color: #000066;
+}
+
+.BizCalcs .GroupDesc img.Header, .BizCalcs .IndustGroupDesc img.Header, .BizCalcs .HomeDesc img.Header
+{
+    width: 250px;
+    height: 250px;
+    float: right;
+    margin: 0px 0px 10px 10px;
+    border-width: 0px;
+}
+
+.BizCalcs .GroupDesc .Ad, .BizCalcs .IndustGroupDesc .Ad, .BizCalcs .HomeDesc .Ad
+{
+    float: left;
+    width: 250px;
+    height: 250px;
+    /*background-color: green;*/
+    display: inline-block;
+    margin: 0px 10px 10px 0px;
+}
+
+.BizCalcs .GroupDesc .PrevNext
+{
+    float: left;
+}
+
+.BizCalcs .GroupDesc .PrevNext img
+{
+    margin: 0px;
+    float: left;
+    margin-right: 10px;
+}
+
+.BizCalcs h1
+{
+	font-size: 16pt;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+.BizCalcs h2
+{
+	font-size: 13pt;
+	font-weight: bold;
+	margin-bottom: 5px;
+	font-style: italic;
+}
+
+.BizCalcs h3
+{
+	color: Black;
+	font-size: 12pt;
+	font-weight: bold;
+	font-style: italic;
+	padding-left: 40px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.BizCalcs p
+{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.BizCalcs form
+{
+	margin-bottom: 0px;		/* prevent extra blank space at bottom of form in IE */
+	font-size: 9pt;
+}
+
+.BizCalcs .TopAd
+{
+    text-align: center;
+}
+
+.BizCalcs .Clear
+{
+    clear: both;
+}
+
+.BizCalcs .GroupsInIndustry
+{
+    padding-left: 20px;
+}
+
+.BizCalcs .HomePage
+{
+    padding: 10px;
+}
+
+.BizCalcs .GroupsInIndustry .Calc
+{
+    height: 245px;
+}
+
+.BizCalcs .CalcsInGroup .Calc, .BizCalcs .GroupsInIndustry .Calc, .BizCalcs .HomePage .Calc
+{
+    float: left;
+    display: inline-block;
+    width: 204px;
+    text-align: center;
+    /*height: 320px;*/
+    overflow: hidden;
+    border-radius: 10px;
+    padding: 3px;
+    margin: 3px 3px 0px 0px;
+    transition: box-shadow 600ms;
+}
+
+.BizCalcs .CalcsInGroup .Calc:hover, .BizCalcs .GroupsInIndustry .Calc:hover, .BizCalcs .HomePage .Calc:hover
+{
+    box-shadow: 0px 0px 10px 2px #ccc;
+}
+
+.BizCalcs .CalcsInGroup .Calc a:link, .BizCalcs .GroupsInIndustry .Calc a:link, .BizCalcs .HomePage .Calc a:link
+{
+    text-decoration: none;
+}
+
+.BizCalcs .CalcsInGroup .Calc a:hover, .BizCalcs .GroupsInIndustry .Calc a:hover, .BizCalcs .HomePage .Calc a:hover
+{
+    color: black;
+}
+
+.BizCalcs .CalcsInGroup .Calc h3, .BizCalcs .GroupsInIndustry .Calc h3, .BizCalcs .HomePage .Calc h3
+{
+    padding-left: 0px;
+    min-height: 40px;
+}
+
+.BizCalcs .HomePage .Calc h3
+{
+    color: rgb(83, 111, 153);
+    font-size: 20pt;
+    margin-bottom: -13px;
+}
+
+.BizCalcs .CalcsInGroup .Calc img, .BizCalcs .GroupsInIndustry .Calc img, .BizCalcs .HomePage .Calc img
+{
+    border-width: 0px;
+}
+
+.BizCalcs .HomePage .Calc img
+{
+    width: 180px;
+    height: 180px;
+}
+
+.BizCalcs .CalcsInGroup .Calc p, .BizCalcs .GroupsInIndustry .Calc p, .BizCalcs .HomePage .Calc p
+{
+    text-align: left;
+    max-height: 65px;
+    overflow-y: hidden;
+    margin: 5px 0px;
+}
+
+.BizCalcs .Calc
+{
+    float: left; 
+    text-align: center; 
+    margin-top: 15px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.BizCalcs div.Help
+{
+}
+
+.BizCalcs div.Help p.Section
+{
+    font-weight: bold;
+    font-style: italic;
+    display: block;
+}
+
+.BizCalcs div.Help p
+{
+    margin: 5px 0px;
+}
+
+.BizCalcs div.Help span
+{
+    font-weight: bold;
+}
+
+.BizCalcs div.Help span:after
+{
+    content: ": ";
+}
+
+.BizCalcs .BottomAdsSource
+{
+	position: absolute;
+	/*display: none;*/
+}
+
+.BizCalcs .BottomAds
+{
+	width: 728px;
+	height: 90px;
+    float: left;
+	margin-right: 15px;
+}
+
+.BizCalcs .BizAfterCalc 
+{
+    float: left;
+    margin-top: 20px;
+    margin-bottom: 20px;
+	margin-right: 15px;
+}
+
+.BizCalcs .BizComments
+{
+    display: inline-block;
+    vertical-align: top;
+}
+
+
+.Stay
+{
+	height: 1px; 
+	width: 1px; 
+	border: none 0px;
+}
+
+.JumpLink
+{
+	font-size: 13pt;
+	font-weight: normal;
+	font-style: italic;
+}
+
+a span.JumpLink
+{
+	text-decoration: underline;
+}
+
+.Tab
+{
+	cursor: pointer;
+}
+
+.ArticlesBox
+{
+	border: dotted 2px #97A9BD; 
+	padding: 5px;
+}
+
+.RSSTitle
+{
+	font-size: 9pt;
+	font-weight: bold;
+}
+
+.RSS
+{
+	font-size: 8pt;
+}
+
+input.CommentName
+{
+	width: 180px;	
+}
+
+textarea.CommentBox
+{
+	width: 400px;
+	height: 100px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.Comments
+{
+	width: 600px;
+/*	background-color: #E8E8FD;
+	border: solid 1px #1414D3; */
+	background-color: #D9E0F0;
+	border: solid 1px #3F5FA9;
+}
+
+.Comments1
+{
+	width: 600px;
+/*	background-color: #E8E8FD;
+	border: solid 1px #1414D3; */
+	background-color: #D9E0F0;
+	border: solid 1px #D9E0F0;
+}
+
+
+.Comments thead td
+{
+	color: #ffffff;
+	font-size: 12pt;
+	font-weight: bold;
+	text-align: center;
+/*	background-color: #1414D3;  */
+	background-color: #3F5FA9;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+.CommentsEven
+{
+	background-color: #F3F3FE;
+}
+
+.CommentsOdd
+{
+/*	background-color: #E8E8FD; */
+	background-color: #D9E0F0;
+}
+
+.CommentsEven tr, .Comments p
+{
+	padding: 4px;
+}
+
+.Comments p
+{
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+span.CommentName
+{
+	font-weight: bold;
+}
+
+span.CommentDate
+{
+	font-size: 7pt;
+}
+
+span.Comment
+{
+}
+
+td.ReviewComment
+{
+	border-bottom: solid 1px #97A9BD;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.Buzz
+{
+	text-align: right;
+	margin-top: -10px; 
+	margin-bottom: -20px;
+	font-size: 8pt;
+}
+
+ul.ExtraSpace li
+{
+	margin-bottom: 10px;
+}
+
+ul.ExtraSpace h3
+{
+	font-size: 125%;
+}
+
+

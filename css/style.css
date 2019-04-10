@@ -1,0 +1,464 @@
+@font-face {
+  font-family: CircularStd;
+  src: url(../fonts/CircularStd-Medium.otf);
+}
+
+/*body{ font-family: CircularStd;}*/
+
+
+
+.container{
+           /* width:1024px;*/
+			font-family: CircularStd; 
+			font-style: normal;
+			font-stretch: normal;
+			line-height: normal;
+			letter-spacing: normal;
+			color: #263269
+           }
+
+.base {
+  width: 128px;
+  height: 40px;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+  border: solid 1px #e8542c;
+  color: #e8542c;
+  font-size: 14px;
+  font-weight: 500;
+  position: center;
+}
+
+
+.x_panel {
+    position: relative;
+    width: 100%;
+	height: 261px;
+    margin-bottom: 10px;
+    /*padding: 10px 17px;*/
+    display: inline-block;
+    background: #f5f5f5;
+    border: solid 1px #263269;
+    -webkit-column-break-inside: avoid;
+    -moz-column-break-inside: avoid;
+    column-break-inside: avoid;
+    opacity: 1;
+    transition: all .2s ease;
+}
+
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.rectangle_16 {
+  /*width: 50%;*/
+  height: 156px;
+  margin-bottom: 5px;
+  /*margin-left: 5px;
+  padding-left: 37px;
+  padding-top: 50px;*/
+  background: url(../images/housesimage.png) no-repeat bottom right, #87d8dc;
+  background-size: container;
+}
+
+.dyk{
+    position: absolute;
+    z-index:2;
+    right: 0;
+    bottom: 0;
+}
+
+.rectangle_1 {
+  width: 99%;
+  height: 156px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  padding-left: 37px;
+ /* padding-top: 50px;*/
+  background-color: #87d8dc;
+  
+}
+
+#pdf{
+    
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.small{
+	font-size: 14px;
+}
+
+.featured-property {
+  width: 134px;
+  height: 134px;
+  background: url(../images/featured_property.png) no-repeat bottom right;
+}
+
+.houses_01 {
+
+  background: url(../images/houses_01.png) no-repeat bottom right, #f5f5f5;
+  background-size: 180px 128px;
+}
+
+.padding_box{
+	padding-left: 9px;
+	padding-right: 10px;
+	padding-top: 8px;
+}
+
+.padding2 {
+	padding-left: 31px;
+	padding-top: 7px;
+}
+
+.padding3 {
+	padding-left: 31px;
+}
+
+.logo {
+	padding-left: 37px;
+}
+
+.title-text{
+	height: 25px;
+	font-size: 20px;
+	font-weight: 500;
+	padding-left: 15px;
+}
+
+.tile-stats {
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+.tile-stats .count, .code .tile-stats h3, .tile-stats p {
+    position: relative;
+    /*margin: 0 0 0 10px;*/
+    padding: 0;
+}
+
+.tile-stats .count {
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.65857;
+}
+
+.tile-stats .percent-up{
+	width: 77px;
+	height: 37px;
+	font-size: 29px;
+	font-weight: 500;
+	color: #45babf;
+	padding-top: 35px;
+	position: absolute;
+    right: -12px;
+    top: 10px;
+    z-index: 1;
+}
+
+.tile-stats .percent-down{
+	width: 77px;
+	height: 37px;
+	font-size: 29px;
+	font-weight: 500;
+	color: #e8542c;
+	padding-top: 35px;
+	position: absolute;
+    right: -12px;
+    top: 10px;
+    z-index: 1;
+}
+
+.tile-stats .code {
+    font-size: 29px;
+    font-weight: 500;
+	color: #45babf;
+}
+
+.tile-stats .icon {
+    width: 20px;
+    height: 20px;
+    color: #BAB8B8;
+    position: absolute;
+    right: 25px;
+    /*top: 10px;*/
+    z-index: 1;
+}
+
+.triangle-up {
+	width: 0;
+	height: 0;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	border-bottom: 30px solid #45babf;
+}
+
+.triangle-down {
+	width: 0;
+	height: 0;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	border-top: 30px solid #e8542c;
+}
+
+.feesfinals {
+  height: 40px;
+}
+
+.marg {
+    margin-top: -15px;
+}
+
+.green1 {
+  width: 515px;
+  height: 30px;
+  font-size: 24px;
+  font-weight: 500;
+  color: #45babf;
+  margin-bottom: -5px;
+}
+
+.elgin_avenue {
+  width: 82%;
+  height: 23px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+#close-image {
+	padding-right: 20px;
+}
+
+
+
+th {
+  background-color: #f5f5f5;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
+  border-bottom: 0;
+}
+
+tr {
+  background-color: #d4d4d4;
+  text-align: center;
+}
+
+td {
+  background-color: #d4d4d4;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.table > caption + thead > tr:first-child > th, .table > colgroup + thead > tr:first-child > th, .table > thead:first-child > tr:first-child > th, .table > caption + thead > tr:first-child > td, .table > colgroup + thead > tr:first-child > td, .table > thead:first-child > tr:first-child > td {
+ border-bottom: 0;
+}
+
+table {
+  border-collapse:separate;
+  border-spacing:5px 5px;
+  padding-right: 40px;
+}​​​​​​​​​​​​​
+
+td.blue {
+	background-color: #223366;
+	z-index:10;
+}
+
+.house{
+	height: 33px;
+	padding-right: 10px;
+	margin-left: -8px;
+	margin-bottom: -9px;
+	margin-top: -7px;
+}
+
+.text-block {
+  /*position: absolute;
+  bottom: -60px;
+  right: 30px;*/
+  display: inline-block;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.year1 {
+    font-size: 16px;
+	font-weight: 500;
+	color: #ffffff;
+	padding-left: 6px;
+}
+
+.year5 {
+    font-size: 16px;
+	font-weight: 500;
+	color: #ffffff;
+	padding-left: 0px;
+}
+
+.num{
+	font-size: 50px;
+	font-weight: 500;
+	margin-top: -80px;
+	margin-left: 43px;
+}
+
+.percent2{
+  font-size: 50px;
+  font-weight: 500;
+  color: #223366;
+}
+
+.table-part{
+	background-color:#223366; 
+	color: white; 
+	text-align: left;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.top_title {
+	padding-top: 50px;
+	width: 100%;
+}
+
+.table-responsive {
+    border: none !important;
+}
+
+.fp1{
+	left: 0;
+    bottom: 0;
+}
+
+.fp2{
+	right: 0;
+    bottom: 0;
+}
+
+
+
+
+
+
+@media screen and (min-width:300px) and (max-width:500px) {
+.dyk{
+    position: absolute;
+	height:30%;
+    z-index:2;
+    right: 0;
+    bottom: 0;
+}
+
+.house {
+    height: 10px;
+    padding-right: 10px;
+    margin-left: -8px;
+    margin-bottom: -9px;
+    margin-top: -7px;
+}
+
+#pdf{
+    
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+}
+
+
+
+
+
+
+@media screen and (min-width: 1024px) and (max-width: 1600px)  {
+
+} 
+
+@media screen and (min-width: 768px) and (max-width: 1023px){
+
+.dyk {
+    position: absolute;
+	height:50%;
+    z-index:2;
+    right: 0;
+    bottom: 0;
+}
+
+.house {
+	height: 20px;
+	padding-right: 8px;
+	margin-left: -8px;
+	margin-bottom: -21px;
+}
+
+#pdf{
+    
+    padding-left: 0px;
+    padding-right: 0px;
+}
+	
+}
+
+
+@media screen and (min-width: 480px) and (max-width: 767px)  {
+
+.dyk {
+    position: absolute;
+	height:50%;
+    z-index:2;
+    right: 0;
+    bottom: 0;
+}
+
+.house {
+	height: 20px;
+	padding-right: 8px;
+	margin-left: -8px;
+	margin-bottom: -21px;
+}
+
+#pdf{
+    
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+}
+
+
+
+@media screen and (min-width: 320px) and (max-width: 479px) {
+
+.dyk{
+    position: absolute;
+	height:30%;
+    z-index:2;
+    right: 0;
+    bottom: 0;
+}
+
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    padding: 1px;
+}
+
+table {
+    border-spacing: 1px 1px;
+}
+
+.house {
+    display: none;
+}
+
+#pdf{
+    
+    padding-left: 0px;
+    padding-right: 0px;
+}
+}
