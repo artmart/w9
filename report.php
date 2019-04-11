@@ -3,8 +3,6 @@ ini_set('memory_limit', '512M');
 ini_set('max_execution_time', 300);
 require_once dirname(__FILE__) . '/db.php';
 
-$where = ' 1 = 1 ';
-
 if(isset($_REQUEST['postcde']) && !($_REQUEST['postcde']=='')){
     $postcde = $_REQUEST['postcde'];
 
@@ -16,11 +14,14 @@ $price_1 = 0;
 $price_2 = 0;
 $price_5 = 0;
 
-$query1_1 = $conn->query("select a.year, a.avg_price_paid price from $bi_marketing a where a.disrtict_or_region_or_yopa_region = '$postcde' and a.prop_type = 'All' and a.year in ('-1', '-2', '-5')");
+$query1_1 = "select a.year, a.avg_price_paid price from $bi_marketing a where a.disrtict_or_region_or_yopa_region = '$postcde' and a.prop_type = 'All' and a.year in ('-1', '-2', '-5')";
+$statement1_1 = $conn->prepare($query1_1);
+$statement1_1->execute();
+$query_1_1 = $statement1_1->fetchAll(\PDO::FETCH_ASSOC);
 
-if($query1_1->num_rows>0){
+if($query_1_1){
     $chat1_1 = 1;
-    foreach($query1_1 as $q){
+    foreach($query_1_1 as $q){
             if($q['year'] == -1){$price_1 = $q['price'];}
             if($q['year'] == -2){$price_2 = $q['price'];}
             if($q['year'] == -5){$price_5 = $q['price'];}        
@@ -36,15 +37,17 @@ $categories1 = [];
 $last_12_months = [];
 $previous_12_months = [];
 
-$sql2 = "select a.prop_type, sum(if(a.year = -1, a.avg_price_paid, 0)) price_1, sum(if(a.year = -2, a.avg_price_paid, 0)) price_2 from $bi_marketing a 
+$sql_2 = "select a.prop_type, sum(if(a.year = -1, a.avg_price_paid, 0)) price_1, sum(if(a.year = -2, a.avg_price_paid, 0)) price_2 from $bi_marketing a 
          where a.disrtict_or_region_or_yopa_region = '$postcde' and a.prop_type not in('All', 'Other') and a.year in ('-1', '-2') group by a.prop_type
          order by FIELD(a.prop_type, 'Detached', 'Semi-Detached', 'Terraced', 'Flats/Maisonettes')";
 
-$query1_2 = $conn->query($sql2);
+$statement1_2 = $conn->prepare($sql_2);
+$statement1_2->execute();
+$query_1_2 = $statement1_2->fetchAll(\PDO::FETCH_ASSOC);
 
-if($query1_2->num_rows>0){
+if($query_1_2){
     $chat1_2 = 1;
-    foreach($query1_2 as $q){
+    foreach($query_1_2 as $q){
             $categories1[] = $q['prop_type'];
             $last_12_months[] = floatval($q['price_1']);
             $previous_12_months[] = floatval($q['price_2']);        
@@ -69,11 +72,13 @@ $sql2_2 = "select b.disrtict_or_region_or_yopa_region disrtict_region_yopa, b.ye
             where b.year in (-1, -2) and b.prop_type = 'All' and b.disrtict_or_region_or_yopa_region = '$postcde' 
             group by b.disrtict_or_region_or_yopa_region, b.year";
 
-$res = $conn->query("select distinct p.region, p.yopa_region from $postcode_list p where p.district = '$postcde' limit 1");
-$row = $res->fetch_assoc();
+$st = $conn->prepare("select distinct p.region, p.yopa_region from $postcode_list p where p.district = '$postcde' limit 1");
+$st->execute();
+$row = $st->fetchAll(\PDO::FETCH_ASSOC);
+
 if($row){
-    $region = $row['region'];
-    $yopa_region = $row['yopa_region'];
+    $region = $row[0]['region'];
+    $yopa_region = $row[0]['yopa_region'];
 
 $sql2_1 .= " Union
             select b.disrtict_or_region_or_yopa_region disrtict_region_yopa,
@@ -101,11 +106,13 @@ $sql2_2 .= " union
             group by b.disrtict_or_region_or_yopa_region, b.year";
 }
 
-$query2_1 = $conn->query($sql2_1);
+$statement2_1 = $conn->prepare($sql2_1);
+$statement2_1->execute();
+$query_2_1 = $statement2_1->fetchAll(\PDO::FETCH_ASSOC);
 
-if($query2_1->num_rows>0){
+if($query_2_1){
     $chat2_1 = 1;
-    foreach($query2_1 as $q){
+    foreach($query_2_1 as $q){
        $table_row.='<tr>
                       <td class="table-part"><img class="house" src="images/house-instant-valuation-01.png">'.$q['disrtict_region_yopa'].'</td>
                       <td>£'.number_format($q['Flats']).'</td>
@@ -129,21 +136,13 @@ $count_y_1 = 0;
 $count_y_2 = 0;
 $percent_y = 0;
 
-/*
-$sql2_2 = "select b.disrtict_or_region_or_yopa_region disrtict_region_yopa, b.year, b.sales
-            from $bi_marketing b
-            where b.year in (-1, -2) and b.prop_type = 'All' and b.disrtict_or_region_or_yopa_region = '$postcde'
-            union
-            select b.disrtict_or_region_or_yopa_region disrtict_region_yopa, b.year, sum(b.sales) sales
-            from $bi_marketing b
-            inner join $postcode_list p on p.yopa_region = b.disrtict_or_region_or_yopa_region
-            where b.year in (-1, -2) and b.prop_type not in ('All', 'Other') and p.district = '$postcde'
-            group by b.disrtict_or_region_or_yopa_region, b.year";
-*/
-$query2_2 = $conn->query($sql2_2);
-if($query2_2->num_rows>0){
+$statement2_2 = $conn->prepare($sql2_2);
+$statement2_2->execute();
+$query_2_2 = $statement2_2->fetchAll(\PDO::FETCH_ASSOC);
+
+if($query_2_2){
     $chat2_2 = 1;
-    foreach($query2_2 as $q){
+    foreach($query_2_2 as $q){
         if($q['disrtict_region_yopa']==$postcde){
               if($q['year']==-1){$count_1 = $q['sales'];}else{$count_2 = $q['sales'];}          
         }else{
@@ -168,11 +167,13 @@ $sql3_1 = "select a.highest_price_paid_address first_address, a.highest_price_pa
            from $bi_marketing a 
            where a.disrtict_or_region_or_yopa_region = '$postcde' and a.prop_type = 'All' and a.year ='-1'";
 
-$query3_1 = $conn->query($sql3_1);
+$statement3_1 = $conn->prepare($sql3_1);
+$statement3_1->execute();
+$query_3_1 = $statement3_1->fetchAll(\PDO::FETCH_ASSOC);
 
-if($query3_1->num_rows>0){
+if($query_3_1){
     $chat3_1 = 1;
-    foreach($query3_1 as $q){                                  
+    foreach($query_3_1 as $q){                                  
         $chart_part .= '<div class="tile-stats">
                         <div class="marg">
                           <div class="icon"><img class="feesfinals" src="images/feesfinals_01.png"></div>
@@ -206,22 +207,26 @@ $transactions_sum = 0;
 $prices_sum = 0;
 
 $sq3_2 = "select DATE_FORMAT(n.month, '%b %y') month, n.avg_price_paid prices, n.sales transactions from $national_trend n order by n.month";
-$query3_2 = $conn->query($sq3_2);
+$statement3_2 = $conn->prepare($sq3_2);
+$statement3_2->execute();
+$query_3_2 = $statement3_2->fetchAll(\PDO::FETCH_ASSOC);
 
-if($query3_2->num_rows>0){
+if($query_3_2){
     $chat3_2 = 1;
    
-    foreach($query3_2 as $q){
+    foreach($query_3_2 as $q){
             $transactions_sum = $transactions_sum + $q['transactions'];
             $prices_sum = $prices_sum + $q['prices'];        
         } 
         
-    foreach($query3_2 as $q){
+    foreach($query_3_2 as $q){
             $categories2[] = $q['month'];
             if($transactions_sum!==0){$transactions[] = floatval($q['transactions']*100/$transactions_sum);}else{$transactions[] = 0;}
             if($prices_sum!==0){$prices[] = floatval($q['prices']*100/$prices_sum);}else{$prices[] = 0;}       
         }  
 }
+
+$conn = null; 
 ?>
 
 <!--logo part-->
@@ -376,15 +381,7 @@ Highcharts.chart('container1', {
     colors: ['#223366','#45babf'],
     chart: {type: 'column', backgroundColor: '#f5f5f5'},
     title: {text: 'Average prices in ' + '<?php echo $postcde; ?>' + ' vs Previous 12 months', align: 'left', x: 15, y : 25.9,
-    style: {
-            fontFamily: 'CircularStd',
-            color: "#263269",
-            width: '515px',
-            height: '25px',
-            fontSize: '20px',
-            fontWeight: '500', 
-            height: '25px',     
-        }
+        style: {fontFamily: 'CircularStd', color: "#263269", width: '515px', height: '25px', fontSize: '20px', fontWeight: '500', height: '25px'}
     },
     xAxis: {lineColor: '#263269', categories: <?php echo json_encode($categories1); ?> }, 
     yAxis: {lineWidth: 1, lineColor: '#263269', gridLineWidth: 0, title: {enabled: false, text: ''},
@@ -393,14 +390,7 @@ Highcharts.chart('container1', {
                 } 
     },
     credits: {enabled: false},
-    plotOptions: {
-            series: {
-                pointWidth: 60, // maxPointWidth: 100, 
-                groupPadding: 0.01,
-                //pointPadding: 10,
-                borderWidth: 0
-            },
-        },
+    plotOptions: {series: {pointWidth: 60, groupPadding: 0.01, borderWidth: 0}},
     legend: {align: 'right', verticalAlign: 'top', y: 10},   
     tooltip: {
         valuePrefix: '£',
@@ -409,39 +399,14 @@ Highcharts.chart('container1', {
                 return  this.point.category+'<br/><span style="color:'+this.point.series.color+'">' + this.point.series.name+': <b>£'+Highcharts.numberFormat(this.point.y,0,'.',',')+'</b></span><br/>';
            }
     },
-    
-        //{point.y:.2f}
     series: [{name: 'last 12 months', data: <?php echo json_encode($last_12_months); ?>}, 
              {name: 'previous 12 months', data: <?php echo json_encode($previous_12_months); ?>}],
     
         responsive: {
         rules: [{condition: {maxWidth: 700},
             chartOptions: {
-                legend: {
-                    align: 'center',
-                    verticalAlign: 'bottom',
-                    layout: 'horizontal'
-                }, 
-                /*
-                yAxis: {
-                    labels: {
-                        align: 'left',
-                        x: 0,
-                        y: -5
-                    },
-                    title: {
-                        text: null
-                    }
-                }, */
-                
-                plotOptions: {
-                    series: {
-                        pointWidth: 20, // maxPointWidth: 100, 
-                        groupPadding: 0.01,
-                        //pointPadding: 10,
-                        borderWidth: 0
-                    },
-                },
+                legend: {align: 'center', verticalAlign: 'bottom', layout: 'horizontal'},                 
+                plotOptions: {series: {pointWidth: 20, groupPadding: 0.01, borderWidth: 0}},
             }
         }]
     }
@@ -454,28 +419,14 @@ Highcharts.chart('container2', {
     colors: ['#223366','#45babf'],
     chart: {type: 'column', backgroundColor: '#f5f5f5'},
     title: {text: 'National trends', align: 'left', x: 15, y : 25.9, 
-    style: {
-        fontFamily: 'CircularStd',
-        color: "#263269",
-        width: '515px',
-        height: '25px',
-        fontSize: '20px',
-        fontWeight: '500',       
-    }
+        style: {fontFamily: 'CircularStd', color: "#263269", width: '515px', height: '25px', fontSize: '20px', fontWeight: '500'}
     },
     xAxis: {lineColor: '#263269', categories: <?php echo json_encode($categories2); ?>}, 
     yAxis: {lineWidth: 1, lineColor: '#263269', gridLineWidth: 0, title: {enabled: false, text: ''},
             labels: {formatter: function(){return this.axis.defaultLabelFormatter.call(this) + '%';}} 
     },
     credits: {enabled: false},
-    plotOptions: {       
-            series: {
-                pointWidth: 20, // maxPointWidth: 100, 
-                groupPadding: 0.01,
-                //pointPadding: 10,
-                borderWidth: 0
-            },
-        },
+    plotOptions: {series: {pointWidth: 20, groupPadding: 0.01, borderWidth: 0}},
     legend: {align: 'right', verticalAlign: 'top', y: 10},  
        tooltip: {
         //valuePrefix: '%',
@@ -484,29 +435,14 @@ Highcharts.chart('container2', {
                 return  this.point.category+'<br/><span style="color:'+this.point.series.color+'">' + this.point.series.name+': <b>'+Highcharts.numberFormat(this.point.y,1,'.',',')+'%</b></span><br/>';
            }
     }, 
-   /* tooltip: {
-        pointFormat: '{point.y} ({point.percentage}%'
-    },
-    */
     series: [{name: 'transactions', data: <?php echo json_encode($transactions); ?>}, 
              {name: 'prices', data: <?php echo json_encode($prices); ?>}],
     
     responsive: {
         rules: [{condition: {maxWidth: 700},
             chartOptions: {
-                legend: {
-                    align: 'center',
-                    verticalAlign: 'bottom',
-                    layout: 'horizontal'
-                },                
-                plotOptions: {
-                    series: {
-                        pointWidth: 10, // maxPointWidth: 100, 
-                        groupPadding: 0.01,
-                        //pointPadding: 10,
-                        borderWidth: 0
-                    },
-                },
+                legend: {align: 'center', verticalAlign: 'bottom', layout: 'horizontal'},                
+                plotOptions: {series: {pointWidth: 10, groupPadding: 0.01, borderWidth: 0}},
             }
         }]
     } 

@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="css/jquery-ui.min.css">
     <link rel="stylesheet" href="css/style.css">
 
+
 <script type="text/javascript" language="javascript" src="js/jquery.js"></script>
 <script src="js/jquery-ui.min.js"></script>
 <!-- Highcharts--> 
@@ -170,12 +171,14 @@ window.scrollTo(0,0);
 <br />
 <legend></legend>
 
-<?php 
+<?php
     require_once dirname(__FILE__) . '/db.php';
-    $query = $conn->query("select distinct district, region, yopa_region from postcode_list");
-    
+    $statement = $conn->prepare("select distinct district, region, yopa_region from $postcode_list");
+    $statement->execute();
+    $query = $statement->fetchAll(\PDO::FETCH_ASSOC);
+
     $options = '<option data-subtext="-- Select --"></option>';
-    if($query->num_rows>0){
+    if(count($query) > 0){
         foreach($query as $q){$options .= '<option data-subtext="'.$q['region'].' '.$q['yopa_region'].'">'.$q['district'].'</option>'; }
     }
 ?>
