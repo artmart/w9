@@ -44,7 +44,7 @@ $previous_12_months = [];
 $sql_2 = "select a.prop_type, sum(if(a.year = -1, a.avg_price_paid, 0)) price_1, sum(if(a.year = -2, a.avg_price_paid, 0)) price_2 from $bi_marketing a 
          where a.disrtict_or_region_or_yopa_region = '$postcde' and a.prop_type not in('All', 'Other') and a.year in ('-1', '-2') group by a.prop_type
          order by FIELD(a.prop_type, 'Detached', 'Semi-Detached', 'Terraced', 'Flats/Maisonettes')";
-echo $sql_2;
+//echo $sql_2;
 $statement1_2 = $conn->prepare($sql_2);
 $statement1_2->execute();
 $query_1_2 = $statement1_2->fetchAll(\PDO::FETCH_ASSOC);
@@ -286,7 +286,7 @@ $conn = null;
             </div>
            </center>
       </div>
-      <?php }else{ echo '<center><img style="height: 100%;" src="Images/nodata.png"/></center>';} ?>
+      <?php }else{ echo '<center><img style="height: 100%;" src="images/nodata.png"/></center>';} ?>
       </div>
       </div>
     </div>
@@ -296,7 +296,7 @@ $conn = null;
       <div class="x_content">
       <?php if($chat1_2){ ?>
             <div id="container1" style="width: 100%; height: 259px; margin: 0 auto"></div>
-      <?php }else{ echo '<center><img style="height: 100%;" src="Images/nodata.png"/></center>';} ?> 
+      <?php }else{ echo '<center><img style="height: 100%;" src="images/nodata.png"/></center>';} ?> 
       </div>
     </div>
     </div>
@@ -325,7 +325,7 @@ $conn = null;
           </tbody>
         </table>
         </div>
-      <?php }else{ echo '<center><img style="height: 100%;" src="Images/nodata.png"/></center>';} ?>  
+      <?php }else{ echo '<center><img style="height: 100%;" src="images/nodata.png"/></center>';} ?>  
       </div>
       </div>
     </div>
@@ -349,7 +349,7 @@ $conn = null;
           <div class="code"><?php echo $yopa_region; ?></div>
           <div class="count"><?php echo number_format($count_y_1); ?></div>
         </div>
-       <?php }else{ echo '<center><img style="height: 100%;" src="Images/nodata.png"/></center>';} ?> 
+       <?php }else{ echo '<center><img style="height: 100%;" src="images/nodata.png"/></center>';} ?> 
       
       </div>  
       </div>
@@ -369,7 +369,7 @@ $conn = null;
             <div class="padding2">
                     <?php echo $chart_part; ?>            
             </div>
-      <?php }else{ echo '<center><img style="height: 100%;" src="Images/nodata.png"/></center>';} ?>            
+      <?php }else{ echo '<center><img style="height: 100%;" src="images/nodata.png"/></center>';} ?>            
       </div>
       </div>
     </div>
@@ -380,7 +380,7 @@ $conn = null;
           <div class="x_content">
           <?php if($chat3_2){ ?>
             <div id="container2" style="width: 100%; height: 259px; margin: 0 auto"></div>
-          <?php }else{ echo '<center><img style="height: 100%;" src="Images/nodata.png"/></center>';} ?>
+          <?php }else{ echo '<center><img style="height: 100%;" src="images/nodata.png"/></center>';} ?>
           </div>
         </div>
     </div>
@@ -460,4 +460,4 @@ Highcharts.chart('container2', {
 });
 </script>
 <?php } ?>
-<?php }else{ echo '<center><img style="height: 350px;" src="Images/nodata.png"/></center>'; } ?>
+<?php }else{ echo '<center><img style="height: 350px;" src="images/nodata.png"/></center>'; } ?>
