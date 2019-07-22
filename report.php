@@ -14,7 +14,11 @@ $price_1 = 0;
 $price_2 = 0;
 $price_5 = 0;
 
-$query1_1 = "select a.year, a.avg_price_paid price from $bi_marketing a where a.disrtict_or_region_or_yopa_region = '$postcde' and a.prop_type = 'All' and a.year in ('-1', '-2', '-5')";
+$query1_1 = "select a.year, a.avg_price_paid price from $bi_marketing a 
+            where a.disrtict_or_region_or_yopa_region = '$postcde' and a.prop_type = 'All' and a.year in ('-1', '-2', '-5')
+            order by  last_updated desc limit 3";
+
+//echo $query1_1;
 $statement1_1 = $conn->prepare($query1_1);
 $statement1_1->execute();
 $query_1_1 = $statement1_1->fetchAll(\PDO::FETCH_ASSOC);
@@ -40,7 +44,7 @@ $previous_12_months = [];
 $sql_2 = "select a.prop_type, sum(if(a.year = -1, a.avg_price_paid, 0)) price_1, sum(if(a.year = -2, a.avg_price_paid, 0)) price_2 from $bi_marketing a 
          where a.disrtict_or_region_or_yopa_region = '$postcde' and a.prop_type not in('All', 'Other') and a.year in ('-1', '-2') group by a.prop_type
          order by FIELD(a.prop_type, 'Detached', 'Semi-Detached', 'Terraced', 'Flats/Maisonettes')";
-
+echo $sql_2;
 $statement1_2 = $conn->prepare($sql_2);
 $statement1_2->execute();
 $query_1_2 = $statement1_2->fetchAll(\PDO::FETCH_ASSOC);
@@ -165,8 +169,10 @@ $sql3_1 = "select a.highest_price_paid_address first_address, a.highest_price_pa
            a.second_highest_price_paid_address second_address, a.second_highest_price_paid second_transaction,
            a.third_highest_price_paid_address third_address, a.third_highest_price_paid third_transaction 
            from $bi_marketing a 
-           where a.disrtict_or_region_or_yopa_region = '$postcde' and a.prop_type = 'All' and a.year ='-1'";
+           where a.disrtict_or_region_or_yopa_region = '$postcde' and a.prop_type = 'All' and a.year ='-1' 
+           order by highest_price_paid desc, second_highest_price_paid desc, third_highest_price_paid desc limit 1";
 
+//echo $sql3_1;
 $statement3_1 = $conn->prepare($sql3_1);
 $statement3_1->execute();
 $query_3_1 = $statement3_1->fetchAll(\PDO::FETCH_ASSOC);
@@ -206,7 +212,12 @@ $prices = [];
 $transactions_sum = 0;
 $prices_sum = 0;
 
-$sq3_2 = "select DATE_FORMAT(n.month, '%b %y') month, n.avg_price_paid prices, n.sales transactions from $national_trend n order by n.month";
+$sq3_2 = "select DATE_FORMAT(n.month, '%b %y') month, n.avg_price_paid prices, n.sales transactions from
+            (select month, avg_price_paid, sales  from $national_trend  
+            order by month desc limit 12) n order by n.month"; 
+
+//select DATE_FORMAT(n.month, '%b %y') month, n.avg_price_paid prices, n.sales transactions from $national_trend n order by n.month desc limit 12";
+//echo $sq3_2;
 $statement3_2 = $conn->prepare($sq3_2);
 $statement3_2->execute();
 $query_3_2 = $statement3_2->fetchAll(\PDO::FETCH_ASSOC);
